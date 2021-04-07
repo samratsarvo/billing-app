@@ -32,7 +32,7 @@ export const getProduct= (data)=>{
 
 export const startAddProduct = (formdata) => {
     return (dispatch) => {
-        axios.post("http://dct-billing-app.herokuapp.com/api/products", formdata , {
+        axios.post("https://dct-billing-app.herokuapp.com/api/products", formdata , {
             headers : {
                 'Authorization' : `Bearer ${localStorage.getItem('token')}`
             }
