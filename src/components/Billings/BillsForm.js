@@ -1,10 +1,7 @@
 import React, {useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {TextField,  Button, Grid} from '@material-ui/core'
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import {   Container, Typography, Card, CardActionArea,  CardActions, CardContent} from '@material-ui/core'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import { startAddBill } from '../../Actions/billsAction'
@@ -61,7 +58,7 @@ import {
         setDate(date)
       }
 
-   const handleCustomerChange = (e,val) => {
+    const handleCustomerChange = (e,val) => {
         console.log('id', val)
         if(val){
             setCustomer(val._id )
@@ -165,7 +162,7 @@ import {
                     </Grid>
 
                     <Grid item xs={12}> 
-               <Autocomplete
+                    <Autocomplete
                        options={customersList}
                        getOptionLabel={(customer) => customer.name}
                        onChange={handleCustomerChange}
@@ -174,7 +171,7 @@ import {
                          <TextField {...params} label="customer" variant="outlined" fullWidth />
                        )}
                      />
-             </Grid>
+                   </Grid>
                     
                     <Grid item xs={10} >
                     { formError.customer && <Typography style={{color : 'red'}}> {formError.customer} </Typography> }
@@ -192,8 +189,8 @@ import {
                             <TextField {...params} label="Product" variant="outlined" fullWidth />
                             )}
                     />
-                    </Grid>
 
+                    </Grid>
                     <Grid item xs={10} >
                     { formError.product && <Typography style={{color : 'red'}}> {formError.product} </Typography> }
                     </Grid>
