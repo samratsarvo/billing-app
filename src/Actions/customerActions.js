@@ -35,7 +35,7 @@ export const getCustomers=(data)=>{
 
 export const startAddCustomers = (formdata) => {
     return (dispatch) => {
-        axios.post("http://dct-billing-app.herokuapp.com/api/customers", formdata , {
+        axios.post("https://dct-billing-app.herokuapp.com/api/customers", formdata , {
             headers : {
                 'Authorization' : `Bearer ${localStorage.getItem('token')}`
             }
