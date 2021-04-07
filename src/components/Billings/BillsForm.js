@@ -61,8 +61,13 @@ import {
         setDate(date)
       }
 
-    const handleCustomerChange=(e)=>{
-        setCustomer(e.target.value)
+   const handleCustomerChange = (e,val) => {
+        console.log('id', val)
+        if(val){
+            setCustomer(val._id )
+        }else{
+            setCustomer('')
+        }  
     }
 
     const handleProductChange=(e,val)=>{
@@ -160,19 +165,15 @@ import {
                     </Grid>
 
                     <Grid item xs={12}> 
-               <FormControl style={{width:"300px"}} size="small" >
-               <InputLabel id="demo-simple-select-label">Customer</InputLabel>
-                <Select
-                    id="demo-simple-select"
-                    labelId="demo-simple-select-label"
-                    value={customer}
-                    onChange={handleCustomerChange}
-                > 
-                    {customersList.map((customer) => {
-                        return <MenuItem key={customer._id} value={customer._id}>{customer.name}</MenuItem>
-                    })}
-                  </Select>
-               </FormControl>
+               <Autocomplete
+                       options={customersList}
+                       getOptionLabel={(customer) => customer.name}
+                       onChange={handleCustomerChange}
+                       style={{width:"300px"}}
+                       renderInput={(params) => (
+                         <TextField {...params} label="customer" variant="outlined" fullWidth />
+                       )}
+                     />
             </Grid>
                     
                     <Grid item xs={10} >
@@ -184,6 +185,7 @@ import {
                             options={productsList}
                             getOptionLabel={(option) => option.name}
                             onChange={handleProductChange}
+                            value={product || ''}
                             size="small" 
                             style={{width:"300px"}}
                             renderInput={(params) => (
