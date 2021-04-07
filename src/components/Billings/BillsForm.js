@@ -174,7 +174,7 @@ import {
                          <TextField {...params} label="customer" variant="outlined" fullWidth />
                        )}
                      />
-            </Grid>
+             </Grid>
                     
                     <Grid item xs={10} >
                     { formError.customer && <Typography style={{color : 'red'}}> {formError.customer} </Typography> }
@@ -192,9 +192,11 @@ import {
                             <TextField {...params} label="Product" variant="outlined" fullWidth />
                             )}
                     />
-
                     </Grid>
+
+                    <Grid item xs={10} >
                     { formError.product && <Typography style={{color : 'red'}}> {formError.product} </Typography> }
+                    </Grid>
 
                     <Grid item xs={10} align='left'> 
                         <Button 
