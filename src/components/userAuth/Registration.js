@@ -78,7 +78,7 @@ export default function Registration({history}){
     
             }
 
-            axios.post('http://dct-billing-app.herokuapp.com/api/users/register' , formData)
+            axios.post('https://dct-billing-app.herokuapp.com/api/users/register' , formData)
             .then((responce)=>{
                 const result = responce.data
                 if(Object.keys(result).includes('errors')){
