@@ -182,7 +182,7 @@ import {
                             options={productsList}
                             getOptionLabel={(option) => option.name}
                             onChange={handleProductChange}
-                            value={product || ''}
+//                             value={product  ||  ''}
                             size="small" 
                             style={{width:"300px"}}
                             renderInput={(params) => (
